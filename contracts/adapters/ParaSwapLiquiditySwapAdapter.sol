@@ -16,6 +16,11 @@ contract ParaSwapLiquiditySwapAdapter is BaseParaSwapSellAdapter {
     ILendingPoolAddressesProvider addressesProvider
   ) public BaseParaSwapSellAdapter(addressesProvider) {}
 
+  // just to check that test works
+  function stub(uint256 x) external returns(uint256) {
+    return x*x;
+  }
+
   /**
    * @dev Swaps the received reserve amount from the flash loan into the asset specified in the params.
    * The received funds from the swap are then deposited into the protocol on behalf of the user.

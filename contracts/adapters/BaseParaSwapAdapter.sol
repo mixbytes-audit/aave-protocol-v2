@@ -33,14 +33,17 @@ abstract contract BaseParaSwapAdapter is FlashLoanReceiverBase, Ownable {
   // Max slippage percent allowed
   uint256 public constant MAX_SLIPPAGE_PERCENT = 3000; // 30%
 
-  IPriceOracleGetter public immutable ORACLE;
+    // todo: uncomment
+//  IPriceOracleGetter public immutable ORACLE;
+  IPriceOracleGetter public immutable ORACLE = IPriceOracleGetter(address(0));
 
   event Swapped(address indexed fromAsset, address indexed toAsset, uint256 fromAmount, uint256 receivedAmount);
 
   constructor(
     ILendingPoolAddressesProvider addressesProvider
   ) public FlashLoanReceiverBase(addressesProvider) {
-    ORACLE = IPriceOracleGetter(addressesProvider.getPriceOracle());
+    // todo: uncomment
+//        ORACLE = IPriceOracleGetter(addressesProvider.getPriceOracle());
   }
 
   /**
